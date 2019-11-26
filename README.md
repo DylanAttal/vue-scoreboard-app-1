@@ -1,29 +1,15 @@
 # vue-scoreboard-app-1
 
-## Project setup
-```
-npm install
-```
+This is a small app meant to demonstrate some of the basics of Vue!
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## installing vue
 
-### Compiles and minifies for production
-```
-npm run build
-```
+https://vuejs.org/v2/guide/installation.html
 
-### Run your tests
-```
-npm run test
-```
+## installing vue and vue cli
 
-### Lints and fixes files
-```
-npm run lint
-```
+https://cli.vuejs.org/guide/installation.html
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## installing bootstrap-vue
+
+https://bootstrap-vue.js.org/docs/
