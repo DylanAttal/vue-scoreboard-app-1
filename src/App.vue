@@ -12,6 +12,11 @@
         :index="index"
       />
     </div>
+    <div class="new-team-container">
+      <h2>Add New Team</h2>
+      <input v-model="newTeam" />
+      <button @click="createNewTeam">Create New Team</button>
+    </div>
   </div>
 </template>
 
@@ -36,7 +41,8 @@ export default {
           teamName: "Seminoles",
           score: 0
         }
-      ]
+      ],
+      newTeam: ""
     };
   },
   methods: {
@@ -45,6 +51,10 @@ export default {
     },
     subtractPoint(index) {
       this.teams[index].score--;
+    },
+    createNewTeam() {
+      this.teams.push({ teamName: this.newTeam, score: 0 });
+      this.newTeam = "";
     }
   }
 };
