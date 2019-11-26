@@ -1,16 +1,22 @@
 <template>
   <div id="app">
     <Header />
+    <div class="teams-container">
+      <Team />
+      <Team />
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import Team from "./components/Team.vue";
 
 export default {
   name: "app",
   components: {
-    Header
+    Header,
+    Team
   }
 };
 </script>
@@ -26,5 +32,11 @@ export default {
 
 body {
   margin: 0;
+}
+
+.teams-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 </style>
