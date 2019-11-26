@@ -7,6 +7,9 @@
         :key="index"
         :teamName="team.teamName"
         :score="team.score"
+        :addPoint="addPoint"
+        :subtractPoint="subtractPoint"
+        :index="index"
       />
     </div>
   </div>
@@ -35,6 +38,14 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    addPoint(index) {
+      this.teams[index].score++;
+    },
+    subtractPoint(index) {
+      this.teams[index].score--;
+    }
   }
 };
 </script>

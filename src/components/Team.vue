@@ -3,8 +3,8 @@
     <h1>{{ teamName }}</h1>
     <p>Update Team Name</p>
     <p>{{ score }}</p>
-    <button>Add Point</button>
-    <button>Subtract Point</button>
+    <button @click="addPoint(index)">Add Point</button>
+    <button @click="subtractPoint(index)">Subtract Point</button>
   </div>
 </template>
 
@@ -13,7 +13,10 @@ export default {
   name: "Team",
   props: {
     teamName: String,
-    score: Number
+    score: Number,
+    addPoint: Function,
+    subtractPoint: Function,
+    index: Number
   }
 };
 </script>
