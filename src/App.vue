@@ -21,7 +21,8 @@
         >
       </div>
     </div>
-    <Winner />
+    <Winner v-show="isWinnerModalVisible" />
+    <div class="modal-overlay" v-show="isWinnerModalVisible"></div>
   </div>
 </template>
 
@@ -63,6 +64,11 @@ export default {
       this.teams.push({ teamName: this.newTeam, score: 0 })
       this.newTeam = ''
     }
+  },
+  computed: {
+    isWinnerModalVisible() {
+      return this.teams.some(team => team.score > 7)
+    }
   }
 }
 </script>
@@ -96,5 +102,15 @@ body {
 
 .new-team-container {
   width: 30%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(200, 200, 200, 0.7);
+  z-index: 9;
 }
 </style>
