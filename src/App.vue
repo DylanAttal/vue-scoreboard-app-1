@@ -2,7 +2,12 @@
   <div id="app">
     <Header />
     <div class="teams-container">
-      <Team v-for="(team, index) in teams" :key="index" :teamName="team.teamName" />
+      <Team
+        v-for="(team, index) in teams"
+        :key="index"
+        :teamName="team.teamName"
+        :score="team.score"
+      />
     </div>
   </div>
 </template>
@@ -21,10 +26,12 @@ export default {
     return {
       teams: [
         {
-          teamName: "Gators"
+          teamName: "Gators",
+          score: 0
         },
         {
-          teamName: "Seminoles"
+          teamName: "Seminoles",
+          score: 0
         }
       ]
     };
