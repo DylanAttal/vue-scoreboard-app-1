@@ -21,18 +21,21 @@
         >
       </div>
     </div>
+    <Winner />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Team from './components/Team.vue'
+import Winner from './components/Winner.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Team
+    Team,
+    Winner
   },
   data() {
     return {
