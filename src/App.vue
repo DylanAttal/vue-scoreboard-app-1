@@ -2,8 +2,7 @@
   <div id="app">
     <Header />
     <div class="teams-container">
-      <Team />
-      <Team />
+      <Team v-for="(team, index) in teams" :key="index" :teamName="team.teamName" />
     </div>
   </div>
 </template>
@@ -17,6 +16,18 @@ export default {
   components: {
     Header,
     Team
+  },
+  data() {
+    return {
+      teams: [
+        {
+          teamName: "Gators"
+        },
+        {
+          teamName: "Seminoles"
+        }
+      ]
+    };
   }
 };
 </script>

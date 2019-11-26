@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Team Name</h1>
+    <h1>{{ teamName }}</h1>
     <p>Update Team Name</p>
     <p>Team Score</p>
     <button>Add Point</button>
@@ -10,7 +10,10 @@
 
 <script>
 export default {
-  name: "Team"
+  name: "Team",
+  props: {
+    teamName: String
+  }
 };
 </script>
 
