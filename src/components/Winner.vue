@@ -1,14 +1,18 @@
 <template>
   <div>
     <h1>Congratulations!</h1>
-    <p>The Team won the sports game!</p>
-    <b-button>Reset Game</b-button>
+    <p>The {{ winningTeamName }} won the sports game!</p>
+    <b-button @click="resetGame">Reset Game</b-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Winner'
+  name: 'Winner',
+  props: {
+    winningTeamName: String,
+    resetGame: Function
+  }
 }
 </script>
 
