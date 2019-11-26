@@ -12,20 +12,24 @@
         :index="index"
       />
     </div>
-    <div class="new-team-container">
-      <h2>Add New Team</h2>
-      <input v-model="newTeam" />
-      <button @click="createNewTeam">Create New Team</button>
+    <div class="new-team-wrapper">
+      <div class="new-team-container">
+        <h2>Add New Team</h2>
+        <b-form-input v-model="newTeam" />
+        <b-button variant="info" @click="createNewTeam"
+          >Create New Team</b-button
+        >
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Team from "./components/Team.vue";
+import Header from './components/Header.vue'
+import Team from './components/Team.vue'
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     Header,
     Team
@@ -34,35 +38,35 @@ export default {
     return {
       teams: [
         {
-          teamName: "Gators",
+          teamName: 'Gators',
           score: 0
         },
         {
-          teamName: "Seminoles",
+          teamName: 'Seminoles',
           score: 0
         }
       ],
-      newTeam: ""
-    };
+      newTeam: ''
+    }
   },
   methods: {
     addPoint(index) {
-      this.teams[index].score++;
+      this.teams[index].score++
     },
     subtractPoint(index) {
-      this.teams[index].score--;
+      this.teams[index].score--
     },
     createNewTeam() {
-      this.teams.push({ teamName: this.newTeam, score: 0 });
-      this.newTeam = "";
+      this.teams.push({ teamName: this.newTeam, score: 0 })
+      this.newTeam = ''
     }
   }
-};
+}
 </script>
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -74,8 +78,20 @@ body {
 }
 
 .teams-container {
+  margin-top: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.new-team-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.new-team-container {
+  width: 30%;
 }
 </style>
