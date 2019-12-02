@@ -62,7 +62,9 @@ export default {
       this.teams[index].score++
     },
     subtractPoint(index) {
-      if(this.teams[index].score > 0)
+      if (this.teams[index].score > 0) {
+        this.teams[index].score--
+      }
         this.teams[index].score--
       else
         this.teams[index].score = 0
