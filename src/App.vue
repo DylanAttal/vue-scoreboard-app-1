@@ -61,8 +61,12 @@ export default {
     addPoint(index) {
       this.teams[index].score++
     },
-    subtractPoint(index) {
-      if(this.teams[index].score > 0)
+    if (this.teams[index].score > 0) {
+        this.teams[index].score--
+      }
+      if (this.teams[index].score > 0) {
+        this.teams[index].score--
+      }
         this.teams[index].score--
     },
     createNewTeam() {
