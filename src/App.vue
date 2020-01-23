@@ -9,6 +9,7 @@
         :score="team.score"
         :addPoint="addPoint"
         :subtractPoint="subtractPoint"
+        :updateTeamName="updateTeamName"
         :index="index"
       />
     </div>
@@ -62,12 +63,14 @@ export default {
       this.teams[index].score++
     },
     subtractPoint(index) {
-      if (this.teams[index].score > 0)
-        this.teams[index].score--
+      if (this.teams[index].score > 0) this.teams[index].score--
     },
     createNewTeam() {
       this.teams.push({ teamName: this.newTeam, score: 0 })
       this.newTeam = ''
+    },
+    updateTeamName(newTeamName, index) {
+      this.teams[index].teamName = newTeamName
     },
     resetGame() {
       this.teams.forEach(team => (team.score = 0))

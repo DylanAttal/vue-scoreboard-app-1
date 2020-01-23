@@ -1,8 +1,11 @@
 <template>
   <div>
-    <h1>{{ newTeamName }}</h1>
+    <h1>{{ teamName }}</h1>
     <p>Update Team Name</p>
-    <b-form-input v-model="newTeamName" />
+    <b-form-input
+      v-model="newTeamName"
+      @keyup="updateTeamName(newTeamName, index)"
+    />
     <p class="score">{{ score }}</p>
     <b-button variant="success" @click="addPoint(index)">Add Point</b-button>
     <b-button variant="danger" @click="subtractPoint(index)"
@@ -19,6 +22,7 @@ export default {
     score: Number,
     addPoint: Function,
     subtractPoint: Function,
+    updateTeamName: Function,
     index: Number
   },
   data() {
