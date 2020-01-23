@@ -16,7 +16,7 @@
     <div class="new-team-wrapper">
       <div class="new-team-container">
         <h2>Add New Team</h2>
-        <b-form-input v-model="newTeam" />
+        <b-form-input v-model="newTeam" @keyup.enter="createNewTeam" />
         <b-button variant="info" @click="createNewTeam"
           >Create New Team</b-button
         >
